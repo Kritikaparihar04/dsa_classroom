@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;  //no of elements
+    int arr[50];    //array initialize
+    cout<<"enter the no of elements";
+    cin>>n;
+
+    //for taking input of arrays
+    for(int i=0;i<n;i++)
+    {
+
+        cin>>arr[i];
+    }
+
+
+
+    //for maxinum
+    int max=arr[0];
+    for(int i=1;i<n;i++)
+    {
+        if (max<arr[i])
+            max=arr[i];
+
+
+    }
+    cout<<"maximum number is: "<<max;
+
+    return 0;
+}
