@@ -1,0 +1,45 @@
+//REVERSE AN ARRAY LIST
+
+
+
+
+#include<iostream>
+using namespace std;
+
+void rev(int arr[],int n)
+{
+    int l=0;
+    int r=n-1;
+    while(l<r)
+    {
+        int temp=arr[l];
+        arr[l]=arr[r];
+        arr[r]=temp;
+            l++;
+            r--;
+             }
+
+}
+void p(int arr[],int n){
+for(int i=0;i<n;i++)
+    {
+
+        cout<<arr[i];
+    }
+}
+
+
+
+
+int main(){
+
+    int arr[10]={1,2,3,4,5,6};
+    rev(arr,6);
+    p(arr,6);
+
+
+    return 0;
+
+}
+
+
