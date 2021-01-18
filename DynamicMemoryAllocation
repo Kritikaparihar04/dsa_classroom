@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+int main()
+{  
+    int *p=new int; //store memory in heap
+    *p=10;
+    cout<<*p;
+    //dynamic allocation in case of array
+    int n;
+    cout<<"enter the size of array";
+    cin>>n;
+    int *pa= new int[n];
+    pa[0]=1;
+    pa[1]=2;
+    for(int i=0;i<n;i++)
+    {
+        cout<<pa[i]<<" ";
+    }
+   
+   //delete to release memory
+   delete p;
+   delete [] pa;
+    return 0;
+}
