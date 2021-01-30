@@ -1,6 +1,10 @@
-
-
-//brute approach
+Duplicate in array
+_______________________
+You have been given an integer array/list(ARR) of size N which contains numbers from 0 to (N - 2). Each number is present at least once. That is, if N = 5, 
+the array/list constitutes values ranging from 0 to 3, and among these, there is a single integer value that is present twice. You need to find and return that
+duplicate number present in the array.
+________________________________________________________________________________________
+//brute approach with time complexity of O(n square)
 
 #include<iostream>
 using namespace std;
@@ -33,7 +37,7 @@ int main()
  }  
 
 -----------------------------------------------------------------------------
-A Better Approach is to sort the element and then if consecutive element are same then return the element
+A Better Approach is to sort the element and then if consecutive element are same then return the element , time complexity of O(nlog n)
  #include<iostream>
  using namespace std;
 //merge function
@@ -127,3 +131,38 @@ void merge(int arr[],int s, int m, int e){
  }
  
 
+__________________________________________________________________________________________________
+
+BEST APPROACH 
+
+calculate the sum of elements present in the array , and then calculate sum of natural number upto size-2, then subtract them
+
+
+ #include<iostream>
+ using namespace std;
+//merge function
+
+ int duplicate(int arr[],int size)
+ {
+    int sum=0;
+    for(int i=0;i<size;i++)
+    {
+        sum+=arr[i];
+    }
+   int t=0;
+   for(int i=0;i<size-1;i++)
+   {
+       t+=i;
+   }
+   int diff=0;
+   diff=sum-t;
+   return diff;
+ }
+ int main()
+ {
+    int arr[]={0,4,2,3,1,4};
+    int size=sizeof(arr)/sizeof(int);
+    cout<<duplicate(arr,size);
+    
+ }
+ 
