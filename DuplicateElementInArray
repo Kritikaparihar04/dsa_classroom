@@ -31,3 +31,99 @@ int main()
    
 
  }  
+
+-----------------------------------------------------------------------------
+A Better Approach is to sort the element and then if consecutive element are same then return the element
+ #include<iostream>
+ using namespace std;
+//merge function
+
+void merge(int arr[],int s, int m, int e){
+    //do array banege
+    int size1=m-s+1;
+    int size2=e-m;
+    //array initialization
+    int arr1[size1],arr2[size2];
+
+    //put the elements
+   for(int i=0;i<size1;i++)
+   {
+       arr1[i]=arr[s+i];
+   }
+
+   for(int j=0;j<size2;j++)
+   {
+       arr2[j]=arr[m+1+j];
+
+   }
+   //ab yaha tak elements copy ho gye h diff diff arrays mei
+   
+    //ab compare karo and origball array m transfer kardo
+
+    int i=0, j=0, k=s;
+    while(i<size1&& j<size2)
+    {
+      if(arr1[i]<arr2[j])
+      {
+          arr[k]=arr1[i];
+          i++;
+          k++;
+      }
+      else
+      {
+          arr[k]=arr2[j];
+          j++;
+          k++;
+      }
+      
+    }
+
+
+    //bache hue elements array m dalo
+
+    if(i<size1)
+    {
+        arr[k]=arr1[i];
+        i++;
+        k++;
+    } 
+    else
+    {
+        arr[k]=arr2[j];
+        j++;
+        k++;
+    }
+    
+}
+
+ // first we have to sort the array list by merge sort
+ void divideArr(int input[], int s, int e)
+ {   if(s<e)
+ {
+     int mid=(s+e)/2;
+     divideArr(input,s,mid);
+     divideArr(input,mid+1,e);
+     //merge the sorted array
+     merge(input,s,mid,e);
+ }   
+ else
+    return;
+ 
+ }
+ int main()
+ {
+    int arr[]={7,1,8,7,2,9};
+    int size=sizeof(arr)/sizeof(int);
+    int s=0, e=size-1;
+   divideArr(arr,s,e);
+   for(int i=0;i<size-1;i++)
+   {
+       if(arr[i]==arr[i+1])
+       {
+           cout<<arr[i];
+           break;
+       }
+   }
+ }
+ 
+
