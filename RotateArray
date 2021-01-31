@@ -1,0 +1,41 @@
+#include<iostream>
+ using namespace std;
+
+ void rotate(int arr[],int move,int s)
+ {  int temp[move];
+     
+     for(int i=0;i<move;i++)           //store the elements in temporary which needs to move
+     {
+         temp[i]=arr[i];
+
+     }
+    
+      int i=0;
+      while(i<s-move)
+      {
+          arr[i]=arr[move+i];         //shift the elements to the left side
+          i++;
+      }
+
+                                      //temp se array m daalo
+
+      for(int i=0;i<move;i++)
+      {
+         arr[s-move+i]=temp[i];
+      }                             
+       for(int i=0;i<s;i++)             // print the final list
+     {
+         cout<<arr[i]<<" ";
+     }
+       } 
+
+ int main()
+ {
+     int arr[]={1,2,3,4,5,6,7,8,5,7,4,8,3,83,25,9};
+     int move=10;
+     int s=sizeof(arr)/sizeof(int);
+     rotate(arr,move,s);
+      
+
+    
+ }
