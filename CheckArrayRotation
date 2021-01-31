@@ -1,0 +1,42 @@
+int arrayRotateCheck(int *input, int size)
+{
+    int i=0;
+    int c=1;
+    while(input[i]<input[i+1])
+    {
+        c++;          //increment c till elements are placed in correct position
+        i++;
+    }
+    if(c<size)
+     return c;
+    else                           //if full list is sorted then tthere is no array rotation , then return 0
+        return 0;
+    
+    
+}
+
+#include <iostream>
+using namespace std;
+int main()
+{
+
+	int t;
+	cin >> t;
+	while (t--)
+	{
+
+		int size;
+		cin >> size;
+		int *input = new int[size];
+
+		for (int i = 0; i < size; i++)
+		{
+			cin >> input[i];
+		}
+
+		cout << arrayRotateCheck(input, size) << endl;
+		delete[] input;
+	}
+	
+	return 0;
+}
