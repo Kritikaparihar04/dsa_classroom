@@ -1,0 +1,37 @@
+
+#include<bits/stdc++.h>
+int main()
+{
+    std::vector<int> v1{1,2,3,4,5};
+    for(int i=0;i<v1.size();i++)
+    {
+        std::cout<<v1[i]<<" ";
+    }
+
+    //for left rotation
+    int rotateLeft=3;
+    std::rotate(v1.begin(),v1.begin()+rotateLeft,v1.end());
+     std::cout<<"After rotation"<<'\n';
+     for(int i=0;i<v1.size();i++)
+    {
+        std::cout<<v1[i]<<" ";
+    }
+    std::cout<<"\n";
+    //for right rotation
+
+    std::vector<int> v2{1,2,3,4,5};
+    for(int i=0;i<v2.size();i++)
+    {
+        std::cout<<v2[i]<<" ";
+    }
+     std::cout<<"\n";
+    int rotateRight=2;
+    std::rotate(v2.begin(),v2.begin()+v2.size()-rotateRight,v2.end());
+    std::cout<<"After rotating right"<<"\n";
+    for(int i=0;i<v2.size();i++)
+    {
+        std::cout<<v2[i];
+    }
+
+
+}
