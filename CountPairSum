@@ -87,6 +87,7 @@ int pairSum(int arr[], int size, int num){
             i++;
             j--;
         }
+	
        else if(sum<num)
        {
            i++;
